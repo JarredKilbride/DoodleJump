@@ -1,4 +1,5 @@
 .grid {
+    background-image: url("https://images.procreate.art/discussions/D2534735-F761-CC19-BB1E-62A82A19AF0A.jpg");
     width: 400px;
     height: 600px;
     background-color: sandybrown;
@@ -11,13 +12,12 @@
 .doodler {
     width: 60px;
     height: 85px;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
 }
 
 .platform {
     width: 85px;
     height: 15px;
-    background-color: green;
     position: absolute;
 }

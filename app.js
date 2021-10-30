@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     const grid  = document.querySelector('.grid'); 
-    const doodler = document.createElement('div'); 
+    const doodler = document.createElement('img'); 
+    doodler.src = "https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-doodler.png"
     let doodlerLeftSpace = 20;
     let startPoint = 150;
     let doodlerBottomSpace = startPoint;
@@ -28,7 +29,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         constructor(newPlatebottom){
             this.bottom = newPlatebottom;
             this.left = Math.random() * 300;
-            this.visual = document.createElement('div'); 
+            this.visual = document.createElement('img');
+            this.visual.src = "https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-platform.png" 
             
             
             const visual = this.visual; 
@@ -62,6 +64,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     score++
                     let firstPlatform = plateforms[0].visual
                     firstPlatform.classList.remove('platform')
+                    firstPlatform.src =''
                     plateforms.shift()
                     let newPlateform = new Platform(600)
                     plateforms.push(newPlateform)
@@ -144,6 +147,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             goingRight = false;
         }
         goingLeft = true;
+        doodler.src = "https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-doodler.png"
         leftTimerId = setInterval(function(){
             if(doodlerLeftSpace>=0){
                 doodlerLeftSpace-=5
@@ -152,7 +156,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             else {
                 moveRight()
             }
-        },30)
+        },20)
     }
 
     function moveRight(){
@@ -162,6 +166,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
         console.log("right")
         goingRight = true; 
+        doodler.src = "https://raw.githubusercontent.com/JasonMize/coding-league-assets/master/doodle-jump-doodler-right.png"
         rightTimerId = setInterval(function(){
             if(doodlerLeftSpace<= 340){
                 doodlerLeftSpace += 5
@@ -169,7 +174,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             } else {
                 moveLeft()
             }
-        },30)
+        },20)
         
     }
 
